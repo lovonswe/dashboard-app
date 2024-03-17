@@ -1,0 +1,11 @@
+.multi-circle-icon circle {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .multi-circle-icon:hover circle {
+    transform: scale(1.2); /* Change the scale factor according to your preference */
+  }
+  

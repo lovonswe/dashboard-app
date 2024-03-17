@@ -9,12 +9,32 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 import Settings from "./pages/Settings";
+import Myday from "./pages/Myday";
+import {NextSevenDays} from "./pages/NextSevenDays";
+import AllTasks from "./pages/AllTasks";
+import MyCalendar from "./pages/MyCalendar";
 
 function App() {
   const router = createBrowserRouter([
     { 
       path: "/", 
       element: <Home /> 
+    },
+    { 
+      path: "/my-day", 
+      element: <Myday /> 
+    },
+    { 
+      path: "/next-seven-days", 
+      element: <NextSevenDays /> 
+    },
+    { 
+      path: "/all-my-tasks", 
+      element: <AllTasks /> 
+    },
+    { 
+      path: "/my-calendar", 
+      element: <MyCalendar /> 
     },
     {
       path: "/home",

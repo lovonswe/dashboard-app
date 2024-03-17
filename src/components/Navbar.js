@@ -17,6 +17,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import MuiAppBar from '@mui/material/AppBar';
 import { useAppStore } from '../appStore';
+import FilterListIcon from '@mui/icons-material/FilterList';
 
 
 
@@ -172,7 +173,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" elevation={0} sx={{backgroundColor: "#ffffff", color: "#2f2f2f"}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -228,6 +229,18 @@ export default function Navbar() {
             >
               <AccountCircle />
             </IconButton>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={openFilter}
+              color="inherit"
+            >
+              <FilterListIcon />
+            </IconButton>
+            
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton

@@ -20,6 +20,8 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { useNavigate } from "react-router-dom";
 import { useAppStore } from "../appStore";
+import HoverableIcon from "./HoverableIcon";
+import Myday from "./Icons/Myday";
 
 const drawerWidth = 240;
 
@@ -92,8 +94,8 @@ export default function Sidebar() {
   const theme = useTheme();
   // const [open, setOpen] = React.useState(true);
   const navigate = useNavigate();
-  const updateOpen = useAppStore((state)=>state.updateOpen);
-  const open = useAppStore((state)=>state.open);
+  const updateOpen = useAppStore((state) => state.updateOpen);
+  const open = useAppStore((state) => state.open);
 
 
   return (
@@ -102,7 +104,7 @@ export default function Sidebar() {
 
       <Drawer variant="permanent" open={open}>
         <DrawerHeader />
-          {/* // <IconButton onClick={() => setOpen(!open)}>
+        {/* // <IconButton onClick={() => setOpen(!open)}>
           //   {theme.direction === "rtl" ? (
           //     <ChevronRightIcon />
           //   ) : (
@@ -111,7 +113,94 @@ export default function Sidebar() {
           // </IconButton> */}
         <Divider />
         <List>
-          <ListItem key={"Home"} disablePadding sx={{ display: "block" }} onClick={()=>navigate("/home")}>
+        <ListItem key={"My day"} disablePadding sx={{ display: "block" }} onClick={() => navigate("/my-day")}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                {/* <InboxIcon /> */}
+                {/* <HoverableIcon /> */}
+                <Myday />
+              </ListItemIcon>
+              <ListItemText primary={"My day"} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem key={"Next 7 days"} disablePadding sx={{ display: "block" }} onClick={() => navigate("/next-seven-days")}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Next 7 days"} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem key={"All my tasks"} disablePadding sx={{ display: "block" }} onClick={() => navigate("/all-my-task")}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary={"All my tasks"} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem key={"My Calendar"} disablePadding sx={{ display: "block" }} onClick={() => navigate("/my-calendar")}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary={"My Calendar"} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+
+
+
+          <ListItem key={"Home"} disablePadding sx={{ display: "block" }} onClick={() => navigate("/home")}>
             <ListItemButton
               sx={{
                 minHeight: 48,
@@ -131,7 +220,7 @@ export default function Sidebar() {
               <ListItemText primary={"Home"} sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
-          <ListItem key={"About"} disablePadding sx={{ display: "block" }} onClick={() =>navigate("/about/1")}>
+          <ListItem key={"About"} disablePadding sx={{ display: "block" }} onClick={() => navigate("/about/1")}>
             <ListItemButton
               sx={{
                 minHeight: 48,
@@ -151,7 +240,7 @@ export default function Sidebar() {
               <ListItemText primary={"About"} sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
-          <ListItem key={"Setting"} disablePadding sx={{ display: "block" }} onClick={() =>navigate("/settings")}>
+          <ListItem key={"Setting"} disablePadding sx={{ display: "block" }} onClick={() => navigate("/settings")}>
             <ListItemButton
               sx={{
                 minHeight: 48,
