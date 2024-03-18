@@ -23,6 +23,7 @@ import Card from "../components/Card";
 import { Container, WelcomeMessageContainer, ScrollableContainer } from "../style/Card";
 import { useTaskStore } from "../appStore";
 import MorningSun from "../components/Sun";
+import CardTwo from "../components/CardTwo";
 
 
 
@@ -74,7 +75,7 @@ export default function Myday() {
 
     return (
         <>
-            <Container mode="dark">
+            <Container mode="light">
 
                 <Navbar />
                 <Box sx={{ display: "flex" }}>
@@ -82,7 +83,7 @@ export default function Myday() {
                     <Box component="main" sx={{ flexGrow: 1, p: 2, height: 100 + "vh" }}>
                         <DrawerHeader />
                         <Stack direction={"row"}>
-                        <div style={{ border: "1px solid white", color: 'white', height: '88vh', padding: '10px', width: '50%', margin: 'auto' }}>
+                        <div style={{ height: '88vh', padding: '10px', width: '50%', margin: 'auto' }}>
                             <WelcomeMessageContainer>
                                 Good Night, Nahid
 
@@ -95,7 +96,8 @@ export default function Myday() {
                                 entries && <ScrollableContainer>
                                     {
                                         entries.map((task) => {
-                                            return <Card task={task} />
+                                            // return <Card task={task} />
+                                            return <CardTwo task={task}/>
                                         })
                                     }
                                 </ScrollableContainer>
@@ -117,9 +119,6 @@ export default function Myday() {
                                 <Form page="Myday" />
                                 <Button onClick={openAddTaskDialog}>Close</Button>
                             </Dialog>
-                        </div>
-                        <div style={{ border: "1px solid white", color: 'white', height: '88vh', padding: '10px', margin: 'auto', marginLeft: "10px", right:"10px", display: "none" }}>
-                            hiiiiiiiiii
                         </div>
                         </Stack>
                     </Box>

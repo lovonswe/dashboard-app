@@ -16,7 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import MuiAppBar from '@mui/material/AppBar';
-import { useAppStore } from '../appStore';
+import { useAppStore, useFilterStore } from '../appStore';
 import FilterListIcon from '@mui/icons-material/FilterList';
 
 
@@ -80,6 +80,8 @@ export default function Navbar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+  const {status, updateStatus} = useFilterStore();
+
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -96,6 +98,10 @@ export default function Navbar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const openFilter = () =>{
+    updateStatus(true);
+  }
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (

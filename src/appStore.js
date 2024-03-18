@@ -20,3 +20,11 @@ let taskStore = (set) => ({
 
 taskStore = persist(taskStore, { name: "tasks" });
 export const useTaskStore = create(taskStore);
+
+
+let FilterTabStatusStore = (set) => ({
+    status: true,
+    updateStatus: (open) => set((state) => ({status: open})),
+});
+FilterTabStatusStore = persist (FilterTabStatusStore, {name: "filter-tab-status"});
+export const useFilterStore = create(FilterTabStatusStore);

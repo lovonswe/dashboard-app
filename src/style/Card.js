@@ -24,7 +24,7 @@ import Form from "../components/Form";
 
 export const Container = styled.div`
 min-height: 100vh;
-background: ${({ mode }) => mode === 'dark' ? '#161616' : '#161616'};
+background: ${({ mode }) => mode === 'dark' ? '#161616' : '#f2f2f2'};
 background: linear-gradient(158deg, rgb(224, 224, 224) 0%, rrgb(233, 237, 254)100% );
 `
 export const WelcomeMessageContainer = styled.div`
@@ -95,11 +95,11 @@ export const Icon = styled.div`
 `;
 
 export const ScrollableContainer = styled.div`
-  max-height: 400px; /* Set max height to enable scrolling */
+  height: 720px; /* Set max height to enable scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   scrollbar-width: thin; /* Set scrollbar width */
   scrollbar-height: 10px;
-  scrollbar-color: #888 #777; /* Set scrollbar color */
-  border: 1px solid red;
+  scrollbar-color:  #ffffff #f2f2f2; /* Set scrollbar color */
+  // border: 1px solid red;
   padding: 10px;
 `;
